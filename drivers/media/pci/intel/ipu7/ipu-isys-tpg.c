@@ -696,7 +696,7 @@ int ipu_isys_tpg_init(struct ipu_isys_tpg *tpg, struct ipu_isys *isys,
 		goto fail;
 	}
 
-	return 0;
+	return v4l2_device_register_subdev_nodes(&isys->v4l2_dev);
 
 fail:
 	ipu_isys_tpg_cleanup(tpg);
